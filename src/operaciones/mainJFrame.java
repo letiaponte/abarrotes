@@ -6,6 +6,8 @@
 
 package operaciones;
 
+import java.sql.Connection;
+
 /**
  *
  * @author risky
@@ -47,6 +49,9 @@ public class mainJFrame extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+     private static Connection conn = null;
+     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -70,7 +75,10 @@ public class mainJFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        conexion con=new conexion();
+        
+        conn=con.creaConexion();
+        con.cerrarConexion(conn);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
